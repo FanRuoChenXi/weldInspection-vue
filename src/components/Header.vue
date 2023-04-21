@@ -11,11 +11,11 @@
   <div class="bar flex-between row-center">
     <div>
       <div class="oneid">ONEID</div>
-      <div class="font10">杰姆龙用户中心</div>
+      <div class="font10">焊缝检测系统</div>
     </div>
     <el-dropdown @command="navigate">
       <span class="action-area N9 padding16 flex row-center">
-        <div class="font16 line24 bold">{{ user.name }}</div>
+        <div class="font16 line24 bold">黄施能</div>
         <i class="el-icon-caret-bottom el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
@@ -41,27 +41,28 @@ export default {
     }
   },
   mounted() {
-    const user = localStorage.getItem('user')
-    if (!user) return this.logout()
-    this.user = JSON.parse(user)
+    // const user = localStorage.getItem('user')
+    // if (!user) return this.logout()
+    // this.user = JSON.parse(user)
   },
   methods: {
     async navigate(command) {
       if (command == 'user' || command == 'password') {
         this.$router.push(command) // 修改用户信息 || 修改密码
-      } else if (command == 'logout') {
-        this.logout() // 登出
       }
+      //  else if (command == 'logout') {
+      //   this.logout() // 登出
+      // }
     },
 
     // 退出登录
-    async logout() {
-      const [, err] = await this.$post('logout')
-      if (err) return this.$msg(err)
-      localStorage.removeItem('user')
-      this.$cookie.remove('TOKEN')
-      this.$router.replace('/')
-    },
+    // async logout() {
+    //   const [, err] = await this.$post('logout')
+    //   if (err) return this.$msg(err)
+    //   localStorage.removeItem('user')
+    //   this.$cookie.remove('TOKEN')
+    //   this.$router.replace('/')
+    // },
   },
 }
 </script>
