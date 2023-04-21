@@ -10,7 +10,7 @@
   <!-- 页头  -->
   <div class="bar flex-between row-center">
     <div>
-      <div class="oneid">ONEID</div>
+      <div class="oneid">WELD</div>
       <div class="font10">焊缝检测系统</div>
     </div>
     <el-dropdown @command="navigate">

@@ -7,9 +7,20 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <div class="card flex row-center" @click="navigate" @click.right.prevent="navigateLocal" v-loading="isLoading">
-    <img :src="require(`@/assets/dashboard/${app.id}.webp`)" :alt="app.title" class="icon" style="z-index: 1" />
-    <img :src="require(`@/assets/dashboard/${app.id}.webp`)" :alt="app.title" class="icon shadow" />
+  <div
+    class="card flex row-center"
+    @click="navigate"
+    @click.right.prevent="navigateLocal"
+    v-loading="isLoading">
+    <img
+      :src="require(`@/assets/dashboard/${app.id}.webp`)"
+      :alt="app.title"
+      class="icon"
+      style="z-index: 1" />
+    <img
+      :src="require(`@/assets/dashboard/${app.id}.webp`)"
+      :alt="app.title"
+      class="icon shadow" />
     <div class="text-left">
       <div class="N1 font16 bold">{{ app.title }}</div>
       <div class="padding4" />
@@ -21,49 +32,51 @@
 <script>
 export default {
   props: { app: Object },
-  data () {
+  data() {
     return {
-      isLoading: false
+      isLoading: false,
     }
   },
   methods: {
     // 点击卡片跳转
-    async navigate () {
+    navigate() {
+      console.log(111)
       if (this.isLoading) return false
-      const ENV = this.$ENV == 'local' ? 'develop' : this.$ENV // 当前环境. 本地环境视同开发环境 
-      const url = this.app?.url?.[ENV]
-      if (url && this.app.noLogin) {
-        window.location.href = url  // 无需 SSO 登录直接跳转
-      } else if (url) {
-        this.go(url) // 需要 SSO 登录后才能跳转
-      } else {
-        // 无需跳转
-        this.$msgbox.confirm(`需要下载并安装使用, 点击前往系统更新页面下载安装包。`, '需要下载', {
-          confirmButtonText: '前往',
-          cancelButtonText: '取消',
-          type: 'warning'
-        }).then(() => {
-          window.location.href = 'https://www.yuque.com/docs/share/770271e8-b283-445e-9993-158b7817734c'
-        })
-      }
+      this.$router.replace(this.app.url)
+      // const ENV = this.$ENV == 'local' ? 'develop' : this.$ENV // 当前环境. 本地环境视同开发环境
+      // const url = this.app?.url?.[ENV]
+      // if (url && this.app.noLogin) {
+      //   window.location.href = url  // 无需 SSO 登录直接跳转
+      // } else if (url) {
+      //   this.go(url) // 需要 SSO 登录后才能跳转
+      // } else {
+      //   // 无需跳转
+      //   this.$msgbox.confirm(`需要下载并安装使用, 点击前往系统更新页面下载安装包。`, '需要下载', {
+      //     confirmButtonText: '前往',
+      //     cancelButtonText: '取消',
+      //     type: 'warning'
+      //   }).then(() => {
+      //     window.location.href = 'https://www.yuque.com/docs/share/770271e8-b283-445e-9993-158b7817734c'
+      //   })
+      // }
     },
 
     //? 若为本地或测试环境, 右键点击跳转到本地环境, 否则不响应
-    async navigateLocal () {
-      const ENV = this.$ENV == 'local' ? 'develop' : this.$ENV // 当前环境. 本地环境视同开发环境   
-      if (this.isLoading || ENV != 'develop') return false
-      this.go(this.app.url.local) + '?token=' + this.$cookie.get('TOKEN') // 跳转到 local 地址
+    async navigateLocal() {
+      // const ENV = this.$ENV == 'local' ? 'develop' : this.$ENV // 当前环境. 本地环境视同开发环境
+      // if (this.isLoading || ENV != 'develop') return false
+      // this.go(this.app.url.local) + '?token=' + this.$cookie.get('TOKEN') // 跳转到 local 地址
     },
 
     // 请求单点登录并跳转
-    async go (url) {
+    async go(url) {
       this.isLoading = true
-      const [, err] = await this.$post('ssoLogin', { appName: this.app.id }) // 请求单点登录 
+      const [, err] = await this.$post('ssoLogin', { appName: this.app.id }) // 请求单点登录
       this.isLoading = false
       if (err) return this.$msg(err)
       window.location.href = url + '?token=' + this.$cookie.get('TOKEN')
-    }
-  }
+    },
+  },
 }
 </script>
 

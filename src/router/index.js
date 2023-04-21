@@ -2,6 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import cookie from 'js-cookie'
 
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function (location) {
+  return routerPush.call(this, location).catch((err) => {})
+}
 Vue.use(VueRouter)
 
 const routes = [
