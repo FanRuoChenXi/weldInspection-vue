@@ -1,0 +1,30 @@
+/* 隐藏标签页底边框, 用于登录页 */
+.el-tabs__nav-wrap::after {
+  display: none;
+}
+/* 标签页样式覆盖, 用于登录页 */
+.el-tabs__item {
+  color: #9196a0;
+  font-size: 16px;
+  padding: 0 40px;
+}
+/* 覆盖输入框圆角 6px */
+.el-input__inner {
+  border-radius: 6px;
+}
+/* 覆盖按钮圆角 6px */
+.el-button {
+  border-radius: 6px;
+}
+
+/* 取消表格底横边框色 */
+.el-table--border:after,
+.el-table--group:after,
+.el-table:before {
+  background-color: #fff !important;
+}
+/* 取消表格内横边框色 */
+.el-table td,
+.el-table th.is-leaf {
+  border-bottom: 1px solid #fff !important;
+}

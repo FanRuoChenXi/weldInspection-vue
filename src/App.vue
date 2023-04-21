@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
-<style lang="less">
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,17 +16,21 @@
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+/* 禁止用户选中文本 */
+* {
+  -webkit-user-select: none; /* webkit浏览器 */
+  -khtml-user-select: none; /* 早期浏览器 */
+  -moz-user-select: none; /* 火狐 */
+  -ms-user-select: none; /* IE10 */
+  user-select: none; /* 禁止用户选中文本 */
+}
+/* 允许用户输入文本 */
+input,
+textarea {
+  -webkit-user-select: text; /* webkit浏览器 */
+  -khtml-user-select: text; /* 早期浏览器 */
+  -moz-user-select: text; /* 火狐 */
+  -ms-user-select: text; /* IE10 */
+  user-select: text; /* 允许用户输入文本 */
 }
 </style>
