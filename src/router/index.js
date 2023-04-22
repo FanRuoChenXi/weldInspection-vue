@@ -35,6 +35,11 @@ const routes = [
     component: () => import('../views/home/modify-password.vue'),
   },
   {
+    path: '/weld',
+    name: 'weld',
+    component: () => import('../views/weld/weld.vue'),
+  },
+  {
     path: '/404',
     name: '404',
     component: () => import('../views/error/404.vue'),

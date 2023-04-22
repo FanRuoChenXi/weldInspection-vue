@@ -15,6 +15,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 /* 禁止用户选中文本 */
 * {
@@ -32,5 +34,9 @@ textarea {
   -moz-user-select: text; /* 火狐 */
   -ms-user-select: text; /* IE10 */
   user-select: text; /* 允许用户输入文本 */
+}
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
 }
 </style>

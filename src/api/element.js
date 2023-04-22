@@ -8,11 +8,13 @@
  */
 import {
   Alert,
+  Aside,
   Button,
   Carousel,
   CarouselItem,
   Checkbox,
   CheckboxGroup,
+  Container,
   Descriptions,
   DescriptionsItem,
   Dialog,
@@ -22,15 +24,20 @@ import {
   DropdownMenu,
   Form,
   FormItem,
+  Header,
   Icon,
   Input,
   Link,
   Loading,
+  Main,
+  Menu,
+  MenuItem,
   Message,
   MessageBox,
   Radio,
   RadioGroup,
   Select,
+  Submenu,
   Option,
   TabPane,
   Table,
@@ -43,11 +50,13 @@ import {
 const element = {
   install: function (Vue) {
     Vue.use(Alert)
+    Vue.use(Aside)
     Vue.use(Button)
     Vue.use(Carousel)
     Vue.use(CarouselItem)
     Vue.use(Checkbox)
     Vue.use(CheckboxGroup)
+    Vue.use(Container)
     Vue.use(Descriptions)
     Vue.use(DescriptionsItem)
     Vue.use(Dialog)
@@ -57,13 +66,18 @@ const element = {
     Vue.use(DropdownMenu)
     Vue.use(Form)
     Vue.use(FormItem)
+    Vue.use(Header)
     Vue.use(Icon)
     Vue.use(Input)
     Vue.use(Link)
     Vue.use(Loading)
+    Vue.use(Main)
+    Vue.use(Menu)
+    Vue.use(MenuItem)
     Vue.use(Radio)
     Vue.use(RadioGroup)
     Vue.use(Select)
+    Vue.use(Submenu)
     Vue.use(Option)
     Vue.use(TabPane)
     Vue.use(Table)

@@ -1,11 +1,3 @@
-<!--
- * @Author: 刘康宁 869161591@qq.com
- * @Date: 2022-07-21 10:38:17
- * @LastEditors: 刘康宁 869161591@qq.com
- * @LastEditTime: 2022-09-20 11:24:01
- * @FilePath: /oneid/src/components/Header.vue
- * @Description: 顶部栏
--->
 <template>
   <!-- 页头  -->
   <div class="bar flex-between row-center">
