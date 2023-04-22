@@ -9,8 +9,8 @@
             <i class="el-icon-menu"></i>
             <span>集团管理</span>
         </template>
-        <el-menu-item index="1-1">用户管理</el-menu-item>
-        <el-menu-item index="1-2">操作日志</el-menu-item>
+        <el-menu-item index="1-1">集团管理</el-menu-item>
+        <el-menu-item index="1-2">用户</el-menu-item>
     </el-submenu>
     <el-submenu index="2">
         <template slot="title">
@@ -32,8 +32,21 @@ export default {
   methods:{
     onMenuSelected(index) {
         return console.log(index);
-      if (this?.activeMenu !== index) {
-        this.$router.push(index);
+      if (this?.activeIndex !== index) {
+        switch (index) {
+            case 1-1:
+                this.$router.push('company')
+                break;
+            case 1-2:
+                this.$router.push('user')
+                break;
+            case 2-1:
+                this.$router.push('image')
+                break;
+            default:
+                break;
+        }
+        // this.$router.push(index);
       }
     },
   }
