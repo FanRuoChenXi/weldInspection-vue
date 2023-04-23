@@ -33,7 +33,7 @@ export default {
 }
 .el-main {
   padding: 8px !important;
-  background: #f4f4f7;
+  background: #fff;
   height: 100%;
 }
 

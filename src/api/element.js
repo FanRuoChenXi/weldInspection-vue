@@ -12,6 +12,7 @@ import {
   Button,
   Carousel,
   CarouselItem,
+  Card,
   Checkbox,
   CheckboxGroup,
   Container,
@@ -34,6 +35,7 @@ import {
   MenuItem,
   Message,
   MessageBox,
+  Pagination,
   Radio,
   RadioGroup,
   Select,
@@ -54,6 +56,7 @@ const element = {
     Vue.use(Button)
     Vue.use(Carousel)
     Vue.use(CarouselItem)
+    Vue.use(Card)
     Vue.use(Checkbox)
     Vue.use(CheckboxGroup)
     Vue.use(Container)
@@ -74,6 +77,7 @@ const element = {
     Vue.use(Main)
     Vue.use(Menu)
     Vue.use(MenuItem)
+    Vue.use(Pagination)
     Vue.use(Radio)
     Vue.use(RadioGroup)
     Vue.use(Select)

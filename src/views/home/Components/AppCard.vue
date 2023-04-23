@@ -40,7 +40,6 @@ export default {
   methods: {
     // 点击卡片跳转
     navigate() {
-      console.log(111)
       if (this.isLoading) return false
       this.$router.replace(this.app.url)
       // const ENV = this.$ENV == 'local' ? 'develop' : this.$ENV // 当前环境. 本地环境视同开发环境

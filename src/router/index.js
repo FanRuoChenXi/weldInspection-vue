@@ -38,6 +38,13 @@ const routes = [
     path: '/weld',
     name: 'weld',
     component: () => import('../views/weld/weld.vue'),
+    children: [
+      {
+        path: 'image',
+        name: '图片检测',
+        component: () => import('../views/weld/Components/weldImage.vue'),
+      },
+    ],
   },
   {
     path: '/404',
