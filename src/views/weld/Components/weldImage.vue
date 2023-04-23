@@ -13,7 +13,25 @@
         <el-dialog :visible.sync="dialogVisible">
           <img width="100%" :src="dialogImageUrl" alt="" />
         </el-dialog>
-        <el-button type="primary" @click="startInspection">开始检测</el-button>
+        <el-button type="primary" @click="centerDialogVisible = true"
+          >开始检测</el-button
+        >
+        <!-- 弹框 -->
+        <el-dialog
+          title="检测结果"
+          :visible.sync="centerDialogVisible"
+          width="30%"
+          center>
+          <div style="margin-bottom: 20px">
+            <el-upload>
+              <img src="@/assets/inspection/7002.png" />
+            </el-upload>
+          </div>
+          <div class="flex">
+            <span style="width: 50px; line-height: 40px">结果</span>
+            <el-input v-model="input" readonly> </el-input>
+          </div>
+        </el-dialog>
       </div>
     </BaseCard>
   </div>
@@ -27,7 +45,8 @@ export default {
     return {
       dialogImageUrl: '',
       dialogVisible: false,
-      dialogImage: false,
+      centerDialogVisible: false,
+      input: '不合格',
     }
   },
   methods: {
