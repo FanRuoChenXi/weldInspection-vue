@@ -7,7 +7,7 @@
   <el-submenu index="1">
         <template slot="title">
             <i class="el-icon-menu"></i>
-            <span>集团管理</span>
+            <span>管理中心</span>
         </template>
         <el-menu-item index="1-1">集团设置</el-menu-item>
         <el-menu-item index="1-2">用户管理</el-menu-item>

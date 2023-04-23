@@ -44,6 +44,11 @@ const routes = [
         name: '图片检测',
         component: () => import('../views/weld/Components/weldImage.vue'),
       },
+      {
+        path: 'user',
+        name: '用户管理',
+        component: () => import('../views/weld/Components/user.vue'),
+      },
     ],
   },
   {

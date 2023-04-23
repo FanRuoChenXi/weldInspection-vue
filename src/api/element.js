@@ -16,10 +16,12 @@ import {
   Checkbox,
   CheckboxGroup,
   Container,
+  Col,
   Descriptions,
   DescriptionsItem,
   Dialog,
   Divider,
+  Drawer,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -38,6 +40,7 @@ import {
   Pagination,
   Radio,
   RadioGroup,
+  Row,
   Select,
   Submenu,
   Option,
@@ -60,10 +63,12 @@ const element = {
     Vue.use(Checkbox)
     Vue.use(CheckboxGroup)
     Vue.use(Container)
+    Vue.use(Col)
     Vue.use(Descriptions)
     Vue.use(DescriptionsItem)
     Vue.use(Dialog)
     Vue.use(Divider)
+    Vue.use(Drawer)
     Vue.use(Dropdown)
     Vue.use(DropdownItem)
     Vue.use(DropdownMenu)
@@ -80,6 +85,7 @@ const element = {
     Vue.use(Pagination)
     Vue.use(Radio)
     Vue.use(RadioGroup)
+    Vue.use(Row)
     Vue.use(Select)
     Vue.use(Submenu)
     Vue.use(Option)
