@@ -50,17 +50,6 @@ export default {
           },
         ],
       },
-      {
-        name: '用户管理',
-        apps: [
-          {
-            id: 'manage',
-            title: '用户管理后台',
-            note: '设置用户和岗位',
-            url: '/manage',
-          },
-        ],
-      },
     ]
     this.$nextTick(() => (this.index = index))
   },
