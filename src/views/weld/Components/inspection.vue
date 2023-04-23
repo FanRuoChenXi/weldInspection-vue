@@ -2,11 +2,50 @@
   <div>
     <BaseCard title="检测记录">
       <div slot="content">
+        <!-- 表格 -->
         <el-table :data="tableData" style="width: 100%">
           <el-table-column prop="date" label="日期"> </el-table-column>
           <el-table-column prop="name" label="上传人"> </el-table-column>
           <el-table-column prop="result" label="结果"> </el-table-column>
+          <el-table-column fixed="right" label="操作" width="120">
+            <template slot-scope="scope">
+              <el-button @click="dialog = true" type="text" size="small">
+                详情
+              </el-button>
+            </template>
+          </el-table-column>
         </el-table>
+        <!-- 表单 -->
+        <el-drawer
+          title="检测详情"
+          :before-close="handleClose"
+          :visible.sync="dialog"
+          direction="rtl"
+          custom-class="demo-drawer"
+          ref="drawer">
+          <div class="demo-drawer__content">
+            <div style="margin-bottom: 20px">
+              <span>原始图像</span>
+              <el-upload>
+                <img src="@/assets/inspection/7001.png" />
+              </el-upload>
+            </div>
+            <el-form :model="form">
+              <el-form-item label="上传人" :label-width="formLabelWidth">
+                <el-input
+                  v-model="form.name"
+                  autocomplete="off"
+                  disabled="true"></el-input>
+              </el-form-item>
+              <el-form-item label="检测结果" :label-width="formLabelWidth">
+                <el-input
+                  v-model="form.result"
+                  autocomplete="off"
+                  disabled="true"></el-input>
+              </el-form-item>
+            </el-form>
+          </div>
+        </el-drawer>
       </div>
     </BaseCard>
   </div>
@@ -43,9 +82,15 @@ export default {
     return {
       filterRows,
       tableData,
+      dialog: false,
+      form: {
+        name: '黄施能',
+        result: '合格',
+      },
+      formLabelWidth: '80px',
     }
   },
 }
 </script>
 
-<style lang=""></style>
+<style scoped></style>
