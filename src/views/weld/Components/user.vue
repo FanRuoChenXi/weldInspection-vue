@@ -21,12 +21,9 @@
         </BaseFilter>
         <!-- 表格 -->
         <el-table :data="tableData" style="width: 100%">
-          <el-table-column prop="name" label="姓名" width="180">
-          </el-table-column>
-          <el-table-column prop="code" label="工号" width="180">
-          </el-table-column>
-          <el-table-column prop="phone" label="联系方式" width="180">
-          </el-table-column>
+          <el-table-column prop="name" label="姓名"> </el-table-column>
+          <el-table-column prop="code" label="工号"> </el-table-column>
+          <el-table-column prop="phone" label="联系方式"> </el-table-column>
           <el-table-column prop="gender" label="性别"> </el-table-column>
         </el-table>
         <!-- 表单 -->

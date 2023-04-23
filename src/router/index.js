@@ -40,6 +40,11 @@ const routes = [
     component: () => import('../views/weld/weld.vue'),
     children: [
       {
+        path: 'inspection',
+        name: '检测记录',
+        component: () => import('../views/weld/Components/inspection.vue'),
+      },
+      {
         path: 'image',
         name: '图片检测',
         component: () => import('../views/weld/Components/weldImage.vue'),
