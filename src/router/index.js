@@ -45,6 +45,11 @@ const routes = [
         component: () => import('../views/weld/Components/weldImage.vue'),
       },
       {
+        path: 'company',
+        name: '集团设置',
+        component: () => import('../views/weld/Components/company.vue'),
+      },
+      {
         path: 'user',
         name: '用户管理',
         component: () => import('../views/weld/Components/user.vue'),
