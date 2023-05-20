@@ -4,8 +4,9 @@
       <div slot="content">
         <!-- 表格 -->
         <el-table :data="tableData" style="width: 100%">
-          <el-table-column prop="date" label="日期"> </el-table-column>
-          <el-table-column prop="name" label="上传人"> </el-table-column>
+          <el-table-column prop="createTime" label="日期"> </el-table-column>
+          <el-table-column prop="createUserName" label="上传人">
+          </el-table-column>
           <el-table-column prop="result" label="结果"> </el-table-column>
           <el-table-column fixed="right" label="操作" width="120">
             <template slot-scope="scope">
@@ -89,6 +90,33 @@ export default {
       },
       formLabelWidth: '80px',
     }
+  },
+  async mounted() {
+    const [res, err] = await this.$get('getRecordTaskList', {
+      host: 'qcs',
+    })
+    if (err) return this.$toast(err)
+    console.log(res.list)
+    res['list'].forEach((e) => {
+      switch (e.result) {
+        case 50:
+          e.result = '不合格'
+          break
+        case 40:
+          e.result = '合格'
+          break
+        case 30:
+          e.result = '良好'
+          break
+        case 20:
+          e.result = '优秀'
+          break
+        case 10:
+          e.result = '满分'
+          break
+      }
+    })
+    this.tableData = res.list
   },
 }
 </script>

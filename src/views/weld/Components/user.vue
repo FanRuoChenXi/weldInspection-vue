@@ -119,6 +119,9 @@ export default {
     const [res, err] = await this.$get('getUserList')
     if (err) return this.$toast(err)
     console.log(res.list)
+    res['list'].forEach((e) => {
+      e.gender = e.gender == 1 ? '男' : '女'
+    })
     this.tableData = res.list
   },
 }
