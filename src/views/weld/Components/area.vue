@@ -21,10 +21,8 @@
         </BaseFilter>
         <!-- 表格 -->
         <el-table :data="tableData" style="width: 100%">
-          <el-table-column prop="name" label="姓名"> </el-table-column>
-          <el-table-column prop="code" label="工号"> </el-table-column>
-          <el-table-column prop="phone" label="联系方式"> </el-table-column>
-          <el-table-column prop="gender" label="性别"> </el-table-column>
+          <el-table-column prop="name" label="区域名称"> </el-table-column>
+          <el-table-column prop="parent" label="父级区域"> </el-table-column>
         </el-table>
         <!-- 表单 -->
         <el-drawer
@@ -36,23 +34,13 @@
           ref="drawer">
           <div class="demo-drawer__content">
             <el-form :model="form">
-              <el-form-item label="用户名称" :label-width="formLabelWidth">
+              <el-form-item label="区域名称" :label-width="formLabelWidth">
                 <el-input v-model="form.name" autocomplete="off"></el-input>
               </el-form-item>
-              <el-form-item label="用户工号" :label-width="formLabelWidth">
-                <el-input v-model="form.code" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item label="用户密码" :label-width="formLabelWidth">
-                <el-input v-model="form.password" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item label="联系方式" :label-width="formLabelWidth">
-                <el-input v-model="form.phone" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item label="性别" :label-width="formLabelWidth">
-                <el-select v-model="form.region" placeholder="请选择性别">
-                  <el-option label="男" value="1"></el-option>
-                  <el-option label="女" value="2"></el-option>
-                </el-select>
+              <el-form-item label="父级区域" :label-width="formLabelWidth">
+                <el-input
+                  v-model="form.pareant_area"
+                  autocomplete="off"></el-input>
               </el-form-item>
             </el-form>
             <div class="demo-drawer__footer">
@@ -73,26 +61,11 @@ export default {
   components: { BaseCard, BaseFilter },
   data() {
     // 筛选框配置
-    const filterRows = [
-      { key: 'name', type: 'input', placeholder: '员工名称/员工工号' },
-      {
-        key: 'gender',
-        type: 'select',
-        options: GENDER,
-        placeholder: '性别',
-      },
-      {
-        key: 'phone',
-        type: 'input',
-        placeholder: '联系方式',
-      },
-    ]
+    const filterRows = [{ key: 'name', type: 'input', placeholder: '区域名称' }]
     const tableData = [
       {
-        name: '黄施能',
-        code: 'hsn',
-        phone: '18268323892',
-        gender: '男',
+        name: '东北区',
+        parent: '华东区',
       },
     ]
     return {
@@ -101,10 +74,7 @@ export default {
       dialog: false,
       form: {
         name: '',
-        code: '',
-        password: '',
-        gender: '',
-        phone: '',
+        pareant_area: '',
       },
       formLabelWidth: '80px',
     }
