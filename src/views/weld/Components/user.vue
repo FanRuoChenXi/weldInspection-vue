@@ -23,8 +23,9 @@
         <el-table :data="tableData" style="width: 100%">
           <el-table-column prop="name" label="姓名"> </el-table-column>
           <el-table-column prop="code" label="工号"> </el-table-column>
-          <el-table-column prop="phone" label="联系方式"> </el-table-column>
           <el-table-column prop="gender" label="性别"> </el-table-column>
+          <el-table-column prop="phone" label="联系方式"> </el-table-column>
+          <el-table-column prop="userJob.name" label="岗位"> </el-table-column>
         </el-table>
         <!-- 表单 -->
         <el-drawer
@@ -93,6 +94,7 @@ export default {
         code: 'hsn',
         phone: '18268323892',
         gender: '男',
+        userJobName: '测试',
       },
     ]
     return {
@@ -112,6 +114,12 @@ export default {
   methods: {
     // 刷新表格
     update(params) {},
+  },
+  async mounted() {
+    const [res, err] = await this.$get('getUserList')
+    if (err) return this.$toast(err)
+    console.log(res.list)
+    this.tableData = res.list
   },
 }
 </script>
