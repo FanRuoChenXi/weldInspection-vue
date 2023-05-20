@@ -57,7 +57,15 @@ export default {
     ]
     return {
       baseInfo,
+      record: {},
     }
+  },
+  methods: {},
+  async mounted() {
+    const [res, err] = await this.$get('getCompany')
+    if (err) return this.$toast(err)
+    console.log(res)
+    this.record = res
   },
 }
 </script>

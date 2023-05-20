@@ -44,7 +44,7 @@ const ENV = getEnvironment()
 const getBaseUrl = (params) => {
   if (params.mock) return BASE_HOST['mock'] // Mock地址
   if (params.host == 'sso') return SSO_HOST[ENV] // 用户中心认证地址
-  if (params.host == 'pms') return DATA_HOST[ENV] // 数据接口地址
+  if (params.host == 'qcs') return DATA_HOST[ENV] // 数据接口地址
   return BASE_HOST[ENV] // 后端接口地址
 }
 

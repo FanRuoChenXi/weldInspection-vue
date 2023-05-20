@@ -22,8 +22,15 @@
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'
 import SideBar from '@/components/SideBar.vue'
+import cookie from 'js-cookie'
 export default {
   components: { BaseHeader, SideBar },
+  mounted() {
+    cookie.set(
+      'TOKEN',
+      '1684606646KWWfG1XeUUrU1F9037XsYVWJR8BNz0CLeN370PGCq3g1NPhSjBiav3C4CeyAC'
+    )
+  },
 }
 </script>
 
