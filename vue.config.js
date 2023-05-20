@@ -21,11 +21,11 @@ module.exports = {
   assetsDir: 'assets',
   //打包后静态资源加前缀,index.html中引用资源的前缀
   publicPath: './',
-  configureWebpack: (config) => {
-    if (process.env.NODE_ENV === 'production') {
-      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true // 移除控制台打印
-    }
-  },
+  // configureWebpack: (config) => {
+  //   if (process.env.NODE_ENV === 'production') {
+  //     config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true // 移除控制台打印
+  //   }
+  // },
   devServer: {
     // open: true, // 自动打开浏览器
     // host: '0.0.0.0',
@@ -47,12 +47,12 @@ module.exports = {
           '^/api-manage/': '',
         },
       },
-      '/api-pms/': {
+      '/api-qcs/': {
         // 此处和 VUE_APP_API_BASE_URL 匹配
-        target: 'https://dev.geemro.com/pms-php/public/index.php/',
+        target: 'https://dev.geemro.com/qcs-php/public/index.php/',
         changeOrigin: true,
         pathRewrite: {
-          '^/api-pms/': '',
+          '^/api-qcs/': '',
         },
       },
     },

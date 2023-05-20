@@ -12,10 +12,10 @@ const SSO_HOST = {
 }
 
 const DATA_HOST = {
-  release: 'https://pms.geemro.com/pms-php/public/index.php/', // (发布版)数据中心OneData接口
-  trial: 'https://trial.geemro.com/pms-php/public/index.php/', // (体验版)数据中心OneData接口
-  develop: 'https://dev.geemro.com/pms-php/public/index.php/', // (开发版)数据中心OneData接口
-  local: '/api-pms/', // 本地版接口地址
+  release: 'https://pms.geemro.com/qcs-php/public/index.php/', // (发布版)数据中心OneData接口
+  trial: 'https://trial.geemro.com/qcs-php/public/index.php/', // (体验版)数据中心OneData接口
+  develop: 'https://dev.geemro.com/qcs-php/public/index.php/', // (开发版)数据中心OneData接口
+  local: '/api-qcs/', // 本地版接口地址
 }
 
 const BASE_HOST = {

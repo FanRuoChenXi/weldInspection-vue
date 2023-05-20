@@ -11,6 +11,8 @@
         </template>
         <el-menu-item index="1-1">集团设置</el-menu-item>
         <el-menu-item index="1-2">用户管理</el-menu-item>
+        <el-menu-item index="1-3">岗位管理</el-menu-item>
+        <el-menu-item index="1-4">区域管理</el-menu-item>
     </el-submenu>
     <el-submenu index="2">
         <template slot="title">
@@ -39,6 +41,12 @@ export default {
                 break;
             case '1-2':
                 this.$router.push('/weld/user')
+                break;
+            case '1-3':
+                this.$router.push('/weld/userjob')
+                break;
+            case '1-4':
+                this.$router.push('/weld/area')
                 break;
             case '2-1':
                 this.$router.push('/weld/inspection')

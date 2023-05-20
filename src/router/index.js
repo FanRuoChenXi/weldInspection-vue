@@ -59,6 +59,16 @@ const routes = [
         name: '用户管理',
         component: () => import('../views/weld/Components/user.vue'),
       },
+      {
+        path: 'userjob',
+        name: '岗位管理',
+        component: () => import('../views/weld/Components/userjob.vue'),
+      },
+      {
+        path: 'area',
+        name: '区域管理',
+        component: () => import('../views/weld/Components/area.vue'),
+      },
     ],
   },
   {
