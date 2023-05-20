@@ -86,6 +86,12 @@ export default {
     // 刷新表格
     update(params) {},
   },
+  async mounted() {
+    const [res, err] = await this.$get('getUserJobList')
+    if (err) return this.$toast(err)
+    console.log(res.list)
+    this.tableData = res.list
+  },
 }
 </script>
 
